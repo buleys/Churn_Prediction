@@ -5,7 +5,7 @@ import joblib
 # Load model
 model_bundle = joblib.load("churn_model.pkl")
 
-model = nodel_bundle["model"]
+model = model_bundle["model"]
 preprocessor = model_bundle["preprocessor"]
 le = model_bundle["label_encoder"]
 
