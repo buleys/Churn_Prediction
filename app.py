@@ -136,30 +136,30 @@ if st.button("Predict Churn"):
     })
 
         # Convert active member to binary
-      active_member_value = (1 if active_member == "Yes" else 0)
+    active_member_value = (1 if active_member == "Yes" else 0)
 
       # Encode gender using the encoder used during training
-      gender_value = le.transform([gender])[0]
+    gender_value = le.transform([gender])[0]
 
       # -----------------------------
       # Apply preprocessing
       # -----------------------------
 
-      input_processed = preprocessor.transform(input_data)
+    input_processed = preprocessor.transform(input_data)
 
       # -----------------------------
       # Prediction
       # -----------------------------
 
-      prediction = model.predict(input_processed)[0]
-      probability = model.predict_proba(input_processed)[0][1]
+     prediction = model.predict(input_processed)[0]
+     probability = model.predict_proba(input_processed)[0][1]
 
-      if prediction == 1:
+     if prediction == 1:
         st.error("⚠️ Customer is likely to churn")
-      else: 
+     else: 
         st.success("✅ Customer is unlikely to churn")
 
-      st.metric(
+     st.metric(
         "Churn Probability",
         f"{probability:.1%}"
 )
