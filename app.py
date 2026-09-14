@@ -70,44 +70,56 @@ st.write("Enter the customer's information below to predict"
 # Customer inputs
 # ------------------------------
 
-gender = st.selectbox(
-  "Gender",
-  ["Male","Female"]
-  )
+st.subheader("👤 Customer Information")
 
-age = st.number_input(
-  "Age",
-  min_value = 18,
-  max_value = 100,
-  value = 30,
-  step = 1
-  )
+col1, col2 = st.columns(2)
 
-country = st.selectbox(
-  "Country",
-  ["France", "Germany", "Spain"]
-  )
+with col1:
+    age = st.number_input(
+        "Age",
+        min_value=18,
+        max_value=100,
+        value=30,
+        step=1
+    )
 
-products_number = st.number_input(
-  "Number of Products",
-  min_value = 1,
-  max_value = 10,
-  value = 1,
-  step = 1
-  )
+    gender = st.selectbox(
+        "Gender",
+        ["Male", "Female"]
+    )
 
-active_member = st.selectbox(
-    "Active Member",
-  ["Yes","No"]
-  )
+with col2:
+    country = st.selectbox(
+        "Country",
+        ["France", "Germany", "Spain"]
+    )
 
-balance = st.number_input(
-    "Balance",
-  min_value = 0.0,
-  value = 50000.0,
-  step = 1000.0
-  )
+    active_member = st.selectbox(
+        "Active Member",
+        options=[0, 1],
+        format_func=lambda x: "Yes" if x == 1 else "No"
+    )
 
+st.subheader("💳 Account Information")
+
+col1, col2 = st.columns(2)
+
+with col1:
+    products_number = st.number_input(
+        "Number of Products",
+        min_value=1,
+        max_value=10,
+        value=1,
+        step=1
+    )
+
+with col2:
+    balance = st.number_input(
+        "Balance",
+        min_value=0.0,
+        value=50000.0,
+        step=1000.0
+    )
 # ------------------------------
 # Prediction
 # ------------------------------
