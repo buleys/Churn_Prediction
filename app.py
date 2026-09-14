@@ -32,6 +32,34 @@ st.set_page_config(
   layout = "centered"
 )
 
+st.markdown("""
+<style>
+
+.main {
+    padding-top: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+.stButton > button {
+    width: 100%;
+    height: 3rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.result-box {
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
 st.title("Customer Churn Prediction")
 
 st.write("Enter the customer's information below to predict"
