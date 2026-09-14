@@ -119,7 +119,12 @@ if st.button("Predict Churn"):
     )
 
     balance_per_age_group = age_group_balance[age_group]
+            # Convert active member to binary
+    active_member_value = (1 if active_member == "Yes" else 0)
 
+      # Encode gender using the encoder used during training
+    gender_value = le.transform([gender])[0]
+  
       # -----------------------------
       # Create input dataframe
       # -----------------------------
@@ -128,18 +133,13 @@ if st.button("Predict Churn"):
         "balance_per_age_group": [balance_per_age_group],
         "country": [country],
         "age_group": [age_group],
-        "active_member": [active_member],
+        "active_member": [active_member_value],
         "is_balance_zero": [is_balance_zero],
         "high_balance": [high_balance],
         "moderate_balance": [moderate_balance],
-        "gender": [gender]
+        "gender": [gender_value]
     })
 
-        # Convert active member to binary
-    active_member_value = (1 if active_member == "Yes" else 0)
-
-      # Encode gender using the encoder used during training
-    gender_value = le.transform([gender])[0]
 
       # -----------------------------
       # Apply preprocessing
