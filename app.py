@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 
 # Load model
-model_bundle = joblib.load("churn_model_plk")
+model_bundle = joblib.load("churn_model_pkl")
 
 model = nodel_bundle["model"]
 preprocessor = model_bundle["preprocessor"]
