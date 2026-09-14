@@ -73,7 +73,7 @@ active_member = st.selectbox(
   ["Yes","No"]
   )
 
-balance = st.nimber_input(
+balance = st.number_input(
     "Balance",
   min_value = 0.0,
   value = 50000.0,
