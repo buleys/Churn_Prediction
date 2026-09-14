@@ -85,7 +85,7 @@ balance = st.nimber_input(
 # ------------------------------
 
 
-if st.button("Predict Churn:):
+if st.button("Predict Churn"):
        
       # -------------------------
       # Create age_group
