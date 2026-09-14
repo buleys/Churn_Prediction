@@ -178,7 +178,10 @@ if st.button("Predict Churn"):
       # -----------------------------
       # Prediction
       # -----------------------------
+    prediction = model.predict(input_processed)[0]
 
+    probability = model.predict_proba(input_processed)[0][1]
+  
     st.divider()
 
     st.subheader("Prediction Result")
@@ -208,6 +211,7 @@ if st.button("Predict Churn"):
         "The probability represents the model's estimated likelihood "
         "that the customer will churn."
     )
+
 
 st.divider()
 
