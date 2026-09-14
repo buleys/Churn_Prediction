@@ -179,15 +179,62 @@ if st.button("Predict Churn"):
       # Prediction
       # -----------------------------
 
-    prediction = model.predict(input_processed)[0]
-    probability = model.predict_proba(input_processed)[0][1]
+    st.divider()
+
+    st.subheader("Prediction Result")
 
     if prediction == 1:
-        st.error("⚠️ Customer is likely to churn")
-    else: 
-        st.success("✅ Customer is unlikely to churn")
+        st.error("⚠️ **Customer is likely to churn**")
+    else:
+        st.success("✅ **Customer is unlikely to churn**")
 
-    st.metric(
-        "Churn Probability",
-        f"{probability:.1%}"
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.metric(
+            "Churn Probability",
+            f"{probability:.1%}"
+        )
+
+    with col2:
+        st.metric(
+            "Prediction",
+            "Churn" if prediction == 1 else "No Churn"
+        )
+
+    st.progress(float(probability))
+
+    st.caption(
+        "The probability represents the model's estimated likelihood "
+        "that the customer will churn."
+    )
+
+st.divider()
+
+st.subheader("ℹ️ About This Model")
+
+st.write(
+    """
+    This application uses a machine learning classification model
+    to predict customer churn based on customer demographics,
+    account characteristics and engagement indicators.
+
+    The model uses engineered features including age groups,
+    balance categories and balance statistics to identify
+    patterns associated with customer churn.
+    """
+)
+
+st.markdown(
+    """
+    **Model inputs include:**
+
+    - Country
+    - Gender
+    - Age group
+    - Number of products
+    - Account balance characteristics
+    - Active membership
+    - Balance-related features
+    """
 )
