@@ -135,12 +135,19 @@ The project highlights the value of combining **exploratory data analysis, featu
 - Comet 
 
 ```markdown
-## Live Demo
+## Streamlit App Live Demo
 
 Try the deployed customer churn prediction application:
 https://churnprediction-9yookwlzdpasakhcx4erhd.streamlit.app/
-
-## Streamlit App
-<img width="566" height="590" alt="image" src="https://github.com/user-attachments/assets/4b95cc28-c490-4d94-bc13-6e432bd743f5" />
 ```
-A
+<img width="566" height="590" alt="image" src="https://github.com/user-attachments/assets/4b95cc28-c490-4d94-bc13-6e432bd743f5" />
+
+## Author
+   Nombulelo Msibi
+   
+
+**LinkedIn:** www.linkedin.com/in/nombulelo-msibi-786b2466
+  
+**GitHub:** https://github.com/buleys
+  
+**Kaggle:** https://www.kaggle.com/buleys
